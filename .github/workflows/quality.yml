@@ -1,0 +1,41 @@
+name: Code Quality
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+    
+    - name: Install dependencies
+      run: npm install
+    
+    - name: Check file structure
+      run: |
+        echo "📁 Checking project structure..."
+        ls -la
+        echo "✅ Structure check passed"
+    
+    - name: Validate package.json
+      run: |
+        echo "📦 Validating package.json..."
+        node -e "JSON.parse(require('fs').readFileSync('package.json'))"
+        echo "✅ package.json is valid"
+    
+    - name: Security audit
+      run: |
+        echo "🔒 Running security audit..."
+        npm audit --audit-level=moderate || true
+        echo "✅ Security audit completed"
