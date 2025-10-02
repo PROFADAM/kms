@@ -1,1 +1,33 @@
-'{"name": "kms", "version": "1.0.0"}' 
+{
+  "name": "kms-blockchain",
+  "version": "1.0.0",
+  "description": "Blockchain-based Key Management System",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node examples/create-wallets.js",
+    "test": "node tests/wallet.test.js",
+    "example": "node examples/create-wallets.js"
+  },
+  "keywords": [
+    "blockchain",
+    "crypto",
+    "wallet",
+    "bitcoin",
+    "ethereum",
+    "solana",
+    "key-management",
+    "defi",
+    "web3"
+  ],
+  "author": "PROFADAM <isaecer10@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PROFADAM/kms.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
