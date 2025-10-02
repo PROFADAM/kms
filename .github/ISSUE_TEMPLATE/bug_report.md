@@ -1,44 +1,40 @@
 ---
-name: Bug report
+name: Bug Report
 about: Create a report to help us improve
-title: ''
+title: '[BUG] '
 labels: bug
 assignees: ''
-
 ---
 
-## Bug description
+## 🐛 Bug Description
 
-<!-- A clear and concise description of what the bug is. -->
+A clear and concise description of what the bug is.
 
-- Would you like to work on a fix? [y/n]
+## 📋 Steps to Reproduce
 
-## To Reproduce
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
 
-Steps to reproduce the behavior:
+## ✅ Expected Behavior
 
-1. ...
-2. ...
-3. ...
-4. ...
+A clear description of what you expected to happen.
 
-<!-- Make sure you are able to reproduce the bug in the main branch, too. -->
+## ❌ Actual Behavior
 
-## Expected behavior
+What actually happened.
 
-<!-- A clear and concise description of what you expected to happen. -->
+## 📸 Screenshots
 
-## Screenshots
+If applicable, add screenshots.
 
-<!-- If applicable, add screenshots to help explain your problem. -->
+## 💻 Environment
 
-## Environment
+- OS: [e.g. Windows 11]
+- Node.js version: [e.g. 18.0.0]
+- KMS version: [e.g. 1.0.0]
 
-<!-- Please fill the following information. -->
+## 📝 Additional Context
 
-- OS: [e.g. Ubuntu 20.04]
-- kms version: [e.g. 0.1.0]
-
-## Additional context
-
-<!-- Add any other context about the problem here. -->
+Add any other context about the problem here.
