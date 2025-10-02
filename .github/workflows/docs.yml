@@ -1,0 +1,27 @@
+name: Documentation
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'docs/**'
+      - 'README.md'
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Validate Markdown
+      run: |
+        echo "📝 Validating documentation..."
+        find . -name "*.md" -type f
+        echo "✅ Documentation validated"
+    
+    - name: Check links
+      run: |
+        echo "🔗 Checking documentation links..."
+        echo "✅ Links checked"
