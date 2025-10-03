@@ -23,11 +23,21 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PROFADAM/kms.git"
+    "url": "git+https://github.com/PROFADAM/kms.git"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^30.2.0"
+  },
   "engines": {
     "node": ">=14.0.0"
-  }
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "tests"
+  },
+  "bugs": {
+    "url": "https://github.com/PROFADAM/kms/issues"
+  },
+  "homepage": "https://github.com/PROFADAM/kms#readme"
 }
