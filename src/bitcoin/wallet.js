@@ -19,14 +19,14 @@ class BitcoinWallet {
     // Generate random private key (32 bytes)
     this.privateKey = crypto.randomBytes(32).toString('hex');
     
-    // In production, use bitcoinjs-lib for proper key derivation
+    // NOTE: In production, use bitcoinjs-lib for proper key derivation (BIP32/BIP44).
     this.publicKey = this._derivePublicKey(this.privateKey);
     this.address = this._deriveAddress(this.publicKey);
     
     return {
       address: this.address,
       publicKey: this.publicKey,
-      // Never expose private key in logs!
+      // WARNING: Never expose private key in logs or insecure storage!
       privateKey: this.privateKey
     };
   }
@@ -45,7 +45,7 @@ class BitcoinWallet {
    * Get wallet balance (requires API integration)
    */
   async getBalance() {
-    // TODO: Integrate with blockchain API
+    // TODO: Implement API integration with a service like Blockstream or Blockchair.
     console.log('Fetching balance for:', this.address);
     return 0;
   }
@@ -58,26 +58,4 @@ class BitcoinWallet {
       throw new Error('No private key available');
     }
     
-    // TODO: Implement proper Bitcoin transaction signing
-    const signature = crypto
-      .createHmac('sha256', this.privateKey)
-      .update(JSON.stringify(txData))
-      .digest('hex');
     
-    return signature;
-  }
-
-  // Private helper methods
-  _derivePublicKey(privateKey) {
-    // Simplified - use proper ECDSA in production
-    return crypto.createHash('sha256').update(privateKey).digest('hex');
-  }
-
-  _deriveAddress(publicKey) {
-    // Simplified - use proper Base58Check encoding in production
-    const hash = crypto.createHash('sha256').update(publicKey).digest('hex');
-    return '1' + hash.substring(0, 33); // Mock Bitcoin address
-  }
-}
-
-module.exports = BitcoinWallet;
